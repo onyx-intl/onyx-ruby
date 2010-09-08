@@ -1,0 +1,2 @@
+set :user, 'testuser'
+set :password, 'testpassword'
