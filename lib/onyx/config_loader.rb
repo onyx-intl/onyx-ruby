@@ -10,11 +10,17 @@ module Onyx
       return loader
     end
 
+    def write_file(path)
+      File.open(path, 'w') do |f|
+        @config.each_key do |key|
+          f.write "set :#{key}, '#{@config[key]}'\n"
+        end
+      end
+    end
+
     def get(key)
       return @config[key]
     end
-
-    private
 
     def set(key, value)
       @config[key] = value
